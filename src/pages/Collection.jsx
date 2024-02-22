@@ -1,11 +1,11 @@
-import React from 'react'
-import CollectionContent from '../components/CollectionContent'
+import React from "react";
+import CollectionContent from "../components/Collection/CollectionContent";
 const Collection = () => {
   return (
     <div>
-     <CollectionContent /> 
+      <CollectionContent />
     </div>
-  )
-}
+  );
+};
 
-export default Collection
+export default Collection;

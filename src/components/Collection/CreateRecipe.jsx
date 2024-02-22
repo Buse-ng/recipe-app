@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoAddCircleOutline, IoClose } from "react-icons/io5";
-import CreateModalBody from "./CreateModalBody";
+import ModalBody from "./ModalBody";
 
 const CreateRecipe = () => {
   const [isBtnClicked, setIsBtnClicked] = useState(false);
@@ -63,7 +63,7 @@ const CreateRecipe = () => {
                 </button>
               </div>
               {/* Modal body */}
-              <CreateModalBody/>
+              <ModalBody />
             </div>
           </div>
         </div>

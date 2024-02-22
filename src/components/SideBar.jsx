@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { MdClose, MdFavorite } from "react-icons/md";
 import { HiSquaresPlus } from "react-icons/hi2";
 import { LuClipboardList, LuMenu } from "react-icons/lu";
-import CollectionContent from "./CollectionContent";
+import CollectionContent from "./Collection/CollectionContent";
+import { Link } from "react-router-dom";
+import "./module.css";
 
 const SideBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,8 +64,8 @@ const SideBar = () => {
             <ul className="space-y-2 font-medium">
               {/* recipes */}
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-300 group"
                 >
                   <span
@@ -73,12 +75,12 @@ const SideBar = () => {
                     <LuClipboardList className="w-6 h-6" />
                   </span>
                   <span className="ms-3">Recipes</span>
-                </a>
+                </Link>
               </li>
               {/* collection */}
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/Collection"
                   className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-300 group"
                 >
                   <span
@@ -90,12 +92,12 @@ const SideBar = () => {
                   <span className="flex-1 ms-3 whitespace-nowrap">
                     Collection
                   </span>
-                </a>
+                </Link>
               </li>
               {/* favorites */}
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/favorites"
                   className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-300 group"
                 >
                   <span
@@ -110,16 +112,15 @@ const SideBar = () => {
                   <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-gray-100 bg-gray-600 rounded-full">
                     3
                   </span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </aside>
 
-        <div className="p-4 sm:ml-64" onClick={handleClose}>
-         
+        {/* <div className="p-4 sm:ml-64" onClick={handleClose}>
           <CollectionContent />
-        </div>
+        </div> */}
       </div>
     </div>
   );
