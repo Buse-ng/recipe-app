@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Cards = () => {
 
   const {id, setId, values, setValues, recipes, setRecipes} = useContext(CollectionContext);
-
+  
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-sm md:max-w-none mx-auto md:mx-0">
       {recipes.map((item) => (

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { IoAddOutline } from "react-icons/io5";
 import { BiSolidImageAdd } from "react-icons/bi";
 import { CollectionContext } from "../../context/CollectionContext";
-
+ 
 const ModalBody = () => {
   const {id, setId, values, setValues, recipes, setRecipes} = useContext(CollectionContext);
 
@@ -14,7 +14,9 @@ const ModalBody = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if(values?.title === "" || !values?.title?.trim() && values?.time === "" || !values?.time?.trim()){
+    if(values?.title === "" || !values?.title?.trim() && values?.time === "" || !values?.time?.trim()
+    && values?.method === "" || !values?.method?.trim() && values?.ingredients === "" || !values?.ingredients?.trim()
+    ){
       return false;
     }
     setRecipes([...recipes, values]);
@@ -142,9 +144,9 @@ const ModalBody = () => {
               className="bg-gray-300 border border-gray-200 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:ring-primary-500 focus:border-primary-500"
             >
               <option value="" disabled>Select Serving</option>
-              <option value="sm">1-5</option>
-              <option value="md">6-10</option>
-              <option value="lg">10-12</option>
+              <option value="1-5">1-5</option>
+              <option value="6-10">6-10</option>
+              <option value="10-12">10-12</option>
             </select>
           </div>
           {/* Ingredients */}
@@ -157,10 +159,13 @@ const ModalBody = () => {
             </label>
             <textarea
               id="ingredients"
+              onChange={onChangeInput}
+              value={values.ingredients}
+              name="ingredients"
               rows={8}
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-300 rounded-lg border border-gray-200 placeholder-gray-500"
               placeholder="Write ingredients here"
-              defaultValue={""}
+              // defaultValue={""}
             />
           </div>
           {/* Method */}
@@ -173,10 +178,13 @@ const ModalBody = () => {
             </label>
             <textarea
               id="method"
+              name="method"
+              value={values.method}
+              onChange={onChangeInput}
               rows={8}
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-300 rounded-lg border border-gray-200 placeholder-gray-500"
               placeholder="Write recipe method here"
-              defaultValue={""}
+              // defaultValue={""}
             />
           </div>
         </div>
