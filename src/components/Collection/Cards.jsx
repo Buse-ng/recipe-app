@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { CollectionContext } from "../../context/CollectionContext";
-import killua from "../../assets/killua.jpg";
 import { Link } from "react-router-dom";
 
 const Cards = () => {
 
-  const {id, setId, values, setValues, recipes, setRecipes} = useContext(CollectionContext);
+  const {id, recipes} = useContext(CollectionContext);
   
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-sm md:max-w-none mx-auto md:mx-0">
@@ -14,7 +13,7 @@ const Cards = () => {
           <Link to={`/recipes/${id}`}>
             <img
               className="rounded-t-lg"
-              src={killua}
+              src={item.img}
               alt="image"
             />
           </Link>

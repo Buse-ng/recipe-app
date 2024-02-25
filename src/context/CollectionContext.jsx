@@ -4,7 +4,7 @@ export const CollectionContext = createContext();
 
 const CollectionProvider = ({ children }) => {
     const [id, setId] = useState(0);
-    const initialValues = {id:id, title:"", time:"", category:"", servings:"", ingredients:"", method:""};
+    const initialValues = {id:id, title:"", img:"", time:"", category:"", servings:"", ingredients:"", method:""};
     const [values, setValues] = useState(initialValues);
     const [recipes, setRecipes] = useState([]);
  

@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { CollectionContext } from "../context/CollectionContext";
 import { useParams } from "react-router-dom";
-import killua from "../assets/killua.jpg";
 
 const CollectionDetail = () => {
   let { id } = useParams();
-  const { recipes, initialValues } = useContext(CollectionContext);
+  const { recipes } = useContext(CollectionContext);
 
   const recipe = recipes.find((item) => {
     return item.id === id - 1;
@@ -14,14 +13,14 @@ const CollectionDetail = () => {
   if (!recipe) {
     return <section>Loading...</section>;
   }
-  const { title, time, category, ingredients, method, servings } = recipe;
+  const { title, time, img, category, ingredients, method, servings } = recipe;
 
   return (
     <div className="flex flex-col gap-4">
       <div className="">
         <h2 className="font-semibold text-xl">{title}</h2>
         <span className="">{category}</span>
-        <img src={killua} alt="" className="w-32 h-32" />
+        <img src={img} alt="" className="w-32 h-32" />
       </div>
       <div className="flex gap-4">
         <div className="border border-gray-400 rounded-lg p-2">Cook Time: {time}</div>

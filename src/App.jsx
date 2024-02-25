@@ -1,12 +1,12 @@
 import React from "react";
-import SideBar from "./components/SideBar";
 import SiteRoute from "./SiteRoute";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
-      <SideBar />
-      <div className="p-4 sm:ml-64">
+      <Navbar />
+      <div className="mx-auto p-4 bg-gray-100 h-screen">
         <SiteRoute />
       </div>
     </>
