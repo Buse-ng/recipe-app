@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaRegHeart } from "react-icons/fa";
+import { MdFavorite } from "react-icons/md";
 
 const MealItem = ({ item }) => {
   return (
@@ -26,13 +26,15 @@ const MealItem = ({ item }) => {
           </div>
           <div className="bg-gray-200 w-40 py-[1px]"></div>
           <div className="flex items-center justify-between mt-2">
-            <span className="text-xl text-gray-600">
-              <FaRegHeart />
+            <span 
+              className="text-2xl text-gray-400 hover:text-red-600 cursor-pointer"
+            >
+              <MdFavorite />
             </span>
             <Link
               to={``}
               className="inline-flex items-center text-sm font-medium text-center 
-              text-white bg-gray-700 rounded-lg hover:bg-gray-800 px-3 py-2"
+              text-white bg-green-700 rounded-lg hover:bg-green-800 px-3 py-2"
             >
               View Recipe
             </Link>

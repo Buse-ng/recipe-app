@@ -16,18 +16,15 @@ const Home = () => {
       try {
         // Fetch random meal
         const randomMealResponse = await axios.get(randomMealUrl);
-        const randomMealData = randomMealResponse.data;
-        setRandomMeal(randomMealData.meals[0]);
+        setRandomMeal(randomMealResponse.data.meals[0]);
 
         // Fetch categories
         const categoriesResponse = await axios.get(categoriesUrl);
-        const categoriesData = categoriesResponse.data;
-        setCategories(categoriesData.categories);
+        setCategories(categoriesResponse.data.categories);
 
         //Fetch area
         const areaResponse = await axios.get(areaUrl);
-        const areaData = areaResponse.data;
-        setArea(areaData.meals);
+        setArea(areaResponse.data.meals);
       } catch (error) {
         console.error(error);
       }
@@ -52,7 +49,9 @@ const Home = () => {
                   alt={item.strCategory}
                   className="w-20 h-20 object-cover rounded-full"
                 />
-                <div className="rounded-full">{item.strCategory}</div>
+                <div className="rounded-full">
+                  {item.strCategory}
+                </div>
               </div>
             ))}
           </div>
@@ -82,7 +81,10 @@ const Home = () => {
             <div className="col-span-2 flex flex-wrap text-center">
               {area && area.map((item, index) => (
                 <div className="w-28 h-16" key={index}>
-                  <div className="bg-red-300 m-1 my-3 p-2 rounded-md">
+                  <div 
+                    className="bg-orange-300 m-1 my-3 p-2 rounded-md
+                    hover:bg-orange-400 cursor-pointer"
+                  >
                     {item.strArea}
                   </div>
                 </div>
