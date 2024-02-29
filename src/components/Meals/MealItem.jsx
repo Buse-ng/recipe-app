@@ -4,9 +4,9 @@ import { MdFavorite } from "react-icons/md";
 import { MealsContext } from "../../context/MealsContext";
 
 const MealItem = ({ item }) => {
-  const { addToFavorites, favorites } = useContext(MealsContext);
+  const { toggleFavorites, favorites } = useContext(MealsContext);
   const isFavorite = favorites.some((favorite) => favorite.idMeal === item.idMeal);
- 
+
   return (
     <div className="flex items-center justify-center mt-16 gap-2">
       <div className="bg-gray-300 w-52 h-64 rounded-t-3xl rounded-b-lg">
@@ -32,7 +32,7 @@ const MealItem = ({ item }) => {
           <div className="bg-gray-200 w-40 py-[1px]"></div>
           <div className="flex items-center justify-between mt-2">
             <button 
-              onClick={() => addToFavorites(item.idMeal)}
+              onClick={() => toggleFavorites(item.idMeal)}
               className={`text-2xl cursor-pointer
                 ${isFavorite 
                 ? "text-red-600" 

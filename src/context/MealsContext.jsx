@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axios from 'axios';
+
 export const MealsContext = createContext();
 
 export const MealsProvider = ({ children }) => {
@@ -20,16 +21,24 @@ export const MealsProvider = ({ children }) => {
     }
   };
 
-  const toggleFavorites = (mealId) => {
-    const isFavorite = favorites.includes(mealId);
-    if (isFavorite) {
-      setFavorites(favorites.filter(id => id !== mealId))
-    } else {
-      setFavorites([...favorites, mealId]);
-    }
-    addToFavorites(mealId);
-  }
+  const toggleFavorites = async (mealId) => {
+    try {
+      const isFavorite = favorites.some((favorite) => favorite.idMeal === mealId);
   
+      if (isFavorite) {
+        setFavorites((prevFavorites) =>
+          prevFavorites.filter((favorite) => favorite.idMeal !== mealId)
+        );
+      } else {
+        const response = await axios.get(`${URL}/lookup.php?i=${mealId}`);
+        const mealDetail = response.data.meals[0];
+        setFavorites((prevFavorites) => [...prevFavorites, mealDetail]);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+ 
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavorites(storedFavorites);

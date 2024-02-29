@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { MdClose, MdFavorite } from "react-icons/md";
 import { HiHome, HiSquaresPlus } from "react-icons/hi2";
 import { LuClipboardList, LuMenu } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import "./module.css";
+import { MealsContext } from "../context/MealsContext";
 
 const SideBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,6 +12,8 @@ const SideBar = () => {
   const menuHandle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const { favorites } = useContext(MealsContext);
 
   return (
     <div>
@@ -114,7 +117,7 @@ const SideBar = () => {
                       Favorites
                     </span>
                     <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-gray-100 bg-gray-600 rounded-full">
-                      3
+                      {favorites.length}
                     </span>
                   </Link>
                 </li>
