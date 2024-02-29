@@ -1,15 +1,18 @@
 import axios from "axios";
-import React from "react";
+import React, { useContext } from "react";
 import { FaSearch } from "react-icons/fa";
+import { MealsContext } from "../context/MealsContext";
 
-const SearchMeal = ({search, setSearch, setSearchResult}) => {
-  
-  const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`;
+const SearchMeal = () => {
+  const { 
+    URL, setSearchResult,
+    search, setSearch 
+  } = useContext(MealsContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(searchUrl);
+      const response = await axios.get(`${URL}/search.php?s=${search}`);
       setSearchResult(response.data.meals);
       setSearch("");
     } catch (error) {
@@ -33,7 +36,7 @@ const SearchMeal = ({search, setSearch, setSearchResult}) => {
             text-gray-400 ps-3 pointer-events-none"
           >
             <FaSearch />
-          </div>
+          </div> 
           <input
             type="search"
             id="search-area"

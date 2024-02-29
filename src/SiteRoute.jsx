@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Collection from "./pages/Collection";
 import CollectionDetail from "./pages/CollectionDetail";
-import { Favorites } from "./pages/Favorites";
+import Favorites from "./pages/Favorites";
 import Recipes from "./pages/Recipes";
 import PageNotFound from "./pages/PageNotFound";
 import Home from "./pages/Home";

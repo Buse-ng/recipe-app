@@ -1,12 +1,16 @@
-import React from 'react'
-import Meals from '../components/Meals/Meals'
+import React from "react";
+import SearchMeal from "../components/SearchMeal";
+import MealCards from "../components/Meals/MealCards";
 
 const Recipes = () => {
   return (
-    <div className=''>
-      <Meals />
+    <div>
+      <SearchMeal />
+      <div>
+        <MealCards />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Recipes
+export default Recipes;

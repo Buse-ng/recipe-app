@@ -1,12 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { MealsContext } from "../context/MealsContext";
 
 const Home = () => {
   const [area, setArea] = useState(null);
   const [randomMeal, setRandomMeal] = useState(null);
   const [categories, setCategories] = useState(null);
 
-  const URL = "https://www.themealdb.com/api/json/v1/1";
+  const { URL } = useContext(MealsContext);
   const areaUrl = `${URL}/list.php?a=list`;
   const randomMealUrl = `${URL}/random.php`;
   const categoriesUrl = `${URL}/categories.php`;
