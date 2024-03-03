@@ -35,9 +35,10 @@ const CreateRecipe = () => {
           id="crud-modal"
           tabIndex={-1}
           aria-hidden="true"
-          className={`${
-            isOpenModal
-              ? "overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+          className={`
+          ${isOpenModal
+              ? `overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full
+              flex justify-center items-center  md:inset-0 h-[calc(100%-1rem)] max-h-full`
               : "hidden"
           }`}
         >
@@ -45,25 +46,29 @@ const CreateRecipe = () => {
             {/* Modal content */}
             <div className="relative bg-gray-200 rounded-lg shadow">
               {/* Modal header */}
-              <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-300">
+              <div 
+                className="flex items-center justify-between p-4 md:p-5 
+                border-b rounded-t border-gray-300"
+              >
                 <h3 className="text-lg font-semibold text-gray-900">
                   Create New Recipe
                 </h3>
                 <button
                   type="button"
-                  className="text-gray-400 bg-transparent rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center
-                   hover:bg-gray-300 hover:text-white"
-                  data-modal-toggle="crud-modal"
+                  className="text-gray-400 bg-transparent rounded-lg text-sm 
+                  w-8 h-8 ms-auto inline-flex justify-center items-center
+                  hover:bg-gray-300 hover:text-white"
                   onClick={closeModal}
                 >
                   <span className="w-5 h-5" aria-hidden="true">
                     <IoClose className="w-5 h-5 text-center" />
                   </span>
-                  <span className="sr-only">Close modal</span>
                 </button>
               </div>
-              {/* Modal body */}
-              <ModalBody />
+              {/* Modal Body */}
+              <>
+                <ModalBody />
+              </>
             </div>
           </div>
         </div>

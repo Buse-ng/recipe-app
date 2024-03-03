@@ -77,13 +77,15 @@ const ModalBody = () => {
   return (
     <>
       <form className="p-4 md:p-5" id="form" onSubmit={onSubmit}>
-        <div className="grid gap-4 mb-4 grid-cols-4">
+        <div className="grid gap-4 mb-4 grid-cols-4 placeholder-gray-500 text-gray-900">
           {/* input file(img)  */}
           <div className="col-span-4 sm:col-span-1 sm:row-span-2">
             <div className="flex items-center justify-center text-center w-full h-full">
               <label
                 htmlFor="img-file"
-                className="flex flex-col items-center justify-center w-full h-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100"
+                className="flex flex-col items-center justify-center w-full h-full 
+                border-2 border-gray-300 border-dashed rounded-lg cursor-pointer 
+                bg-gray-50 hover:bg-gray-100"
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
               >
@@ -115,7 +117,7 @@ const ModalBody = () => {
           <div className="col-span-4 sm:col-span-1">
             <label
               htmlFor="title"
-              className="block mb-2 text-sm font-medium text-gray-900"
+              className="block mb-2 text-sm font-medium"
             >
               Recipe Title*
             </label>
@@ -125,7 +127,8 @@ const ModalBody = () => {
               value={values.title}
               id="title"
               onChange={onChangeInput}
-              className="bg-gray-300 border border-gray-200 text-gray-900 text-sm rounded-lg block w-full p-2.5 placeholder-gray-400"
+              className="bg-gray-300 border border-gray-200 
+              text-sm rounded-lg block w-full p-2.5"
               placeholder="Type recipe name"
               required=""
             />
@@ -134,16 +137,17 @@ const ModalBody = () => {
           <div className="col-span-4 sm:col-span-1">
             <label
               htmlFor="category"
-              className="block mb-2 text-sm font-medium text-gray-900"
+              className="block mb-2 text-sm font-medium"
             >
               Category
             </label>
-
             <select
               id="category"
               onChange={handleCategory}
               value={values.category}
-              className="bg-gray-300 border border-gray-200 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:ring-primary-500 focus:border-primary-500"
+              className="bg-gray-300 border border-gray-200 
+              text-sm rounded-lg block w-full p-2.5 
+              focus:ring-primary-500 focus:border-primary-500"
             >
               <option value="" disabled>
                 Select Category
@@ -159,16 +163,17 @@ const ModalBody = () => {
           <div className="col-span-4 sm:col-span-1">
             <label
               htmlFor="servings"
-              className="block mb-2 text-sm font-medium text-gray-900"
+              className="block mb-2 text-sm font-medium"
             >
               Servings
             </label>
-
             <select
               id="servings"
               onChange={handleServings}
               value={values.servings}
-              className="bg-gray-300 border border-gray-200 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:ring-primary-500 focus:border-primary-500"
+              className="bg-gray-300 border border-gray-200 
+              text-sm rounded-lg block w-full p-2.5 
+              focus:ring-primary-500 focus:border-primary-500"
             >
               <option value="" disabled>
                 Select Serving
@@ -178,12 +183,11 @@ const ModalBody = () => {
               <option value="10-12">10-12</option>
             </select>
           </div>
-
           {/* prep time */}
           <div className="col-span-4 sm:col-span-1">
             <label
               htmlFor="prep_time"
-              className="block mb-2 text-sm font-medium text-gray-900"
+              className="block mb-2 text-sm font-medium"
             >
               Prep Time
             </label>
@@ -192,7 +196,8 @@ const ModalBody = () => {
               onChange={onChangeInput}
               name="prep_time"
               id="prep_time"
-              className="bg-gray-300 border border-gray-200 text-gray-900 text-sm rounded-lg block w-full p-2.5 placeholder-gray-400"
+              className="bg-gray-300 border border-gray-200 
+              text-sm rounded-lg block w-full p-2.5"
               placeholder="Prep time"
               required=""
             />
@@ -201,7 +206,7 @@ const ModalBody = () => {
           <div className="col-span-4 sm:col-span-1">
             <label
               htmlFor="cook_time"
-              className="block mb-2 text-sm font-medium text-gray-900"
+              className="block mb-2 text-sm font-medium"
             >
               Cook Time
             </label>
@@ -210,7 +215,8 @@ const ModalBody = () => {
               onChange={onChangeInput}
               name="cook_time"
               id="cook_time"
-              className="bg-gray-300 border border-gray-200 text-gray-900 text-sm rounded-lg block w-full p-2.5 placeholder-gray-400"
+              className="bg-gray-300 border border-gray-200 
+              text-sm rounded-lg block w-full p-2.5"
               placeholder="Cook time"
               required=""
             />
@@ -219,7 +225,7 @@ const ModalBody = () => {
           <div className="col-span-4 sm:col-span-1">
             <label
               htmlFor="total_time"
-              className="block mb-2 text-sm font-medium text-gray-900"
+              className="block mb-2 text-sm font-medium"
             >
               Total Time*
             </label>
@@ -228,17 +234,17 @@ const ModalBody = () => {
               onChange={onChangeInput}
               name="total_time"
               id="total_time"
-              className="bg-gray-300 border border-gray-200 text-gray-900 text-sm rounded-lg block w-full p-2.5 placeholder-gray-400"
+              className="bg-gray-300 border border-gray-200 
+              text-sm rounded-lg block w-full p-2.5"
               placeholder="Total time"
               required=""
             />
           </div>
-
           {/* Ingredients */}
           <div className="col-span-4 sm:col-span-2">
             <label
               htmlFor="ingredients"
-              className="block mb-2 text-sm font-medium text-gray-900"
+              className="block mb-2 text-sm font-medium"
             >
               Ingredients*
             </label>
@@ -248,16 +254,16 @@ const ModalBody = () => {
               value={values.ingredients}
               name="ingredients"
               rows={8}
-              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-300 rounded-lg border border-gray-200 placeholder-gray-500"
+              className="block p-2.5 w-full text-sm bg-gray-300 
+              rounded-lg border border-gray-200"
               placeholder="Write ingredients here"
-              // defaultValue={""}
             />
           </div>
           {/* Method */}
           <div className="col-span-4 sm:col-span-2">
             <label
               htmlFor="method"
-              className="block mb-2 text-sm font-medium text-gray-900"
+              className="block mb-2 text-sm font-medium"
             >
               Method
             </label>
@@ -267,9 +273,9 @@ const ModalBody = () => {
               value={values.method}
               onChange={onChangeInput}
               rows={8}
-              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-300 rounded-lg border border-gray-200 placeholder-gray-500"
+              className="block p-2.5 w-full text-smbg-gray-300 
+              rounded-lg border border-gray-200"
               placeholder="Write recipe method here"
-              // defaultValue={""}
             />
           </div>
         </div>
@@ -277,14 +283,15 @@ const ModalBody = () => {
         <button
           type="submit"
           className="text-white inline-flex items-center bg-green-600 hover:bg-green-700 
-                  focus:ring-2 focus:outline-none font-medium rounded-lg text-sm 
-                  px-5 py-2.5 text-center focus:ring-green-300"
+          focus:ring-2 focus:outline-none font-medium rounded-lg text-sm 
+          px-5 py-2.5 text-center focus:ring-green-300"
         >
           <IoAddOutline className="me-1 -ms-1 w-5 h-5" />
           Add new recipe
         </button>
         <span className="flex items-center justify-end text-xs">
-        Fields marked with * cannot be left blank.</span>
+          Fields marked with * cannot be left blank.
+        </span>
       </form>
     </>
   );
