@@ -1,6 +1,8 @@
 import React from "react";
 import Cards from "../components/Collection/Cards";
 import CreateRecipe from "../components/Collection/CreateRecipe";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Collection = () => {
   return (
@@ -9,6 +11,9 @@ const Collection = () => {
         <CreateRecipe />
       </div> 
       <Cards />
+      <div>
+        <ToastContainer position="bottom-right" />
+      </div>
     </div>
   );
 };

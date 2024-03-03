@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="mx-auto p-4 bg-gray-100 h-screen">
+      <div className="mx-auto p-4 bg-gray-100 min-h-screen">
         <SiteRoute />
       </div>
     </>

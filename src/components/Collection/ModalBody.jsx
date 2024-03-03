@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { IoAddOutline } from "react-icons/io5";
 import { BiSolidImageAdd } from "react-icons/bi";
 import { CollectionContext } from "../../context/CollectionContext";
+import showToast from "./ToastMessage";
 
 const ModalBody = () => {
   const { 
@@ -18,16 +19,18 @@ const ModalBody = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (
-      values?.title === "" || (!values?.title?.trim() && 
-      values?.total_time === "") || (!values?.total_time?.trim() 
-      && values?.ingredients === "") || !values?.ingredients?.trim()
-    ) {
-      return false;
+    const requiredFields = ["title", "total_time", "ingredients"];
+    
+    for (const field of requiredFields) {
+      if(!values[field]?.trim()){
+        showToast(`"${field}" field cannot be left blank.`, "warning");
+        return false;
+      }
     }
     setRecipes([...recipes, values]);
     setId(id + 1);
     console.log("values:", values);
+    showToast("New recipe added successfully", "success");
   };
 
   const handleCategory = (e) => {
@@ -108,7 +111,6 @@ const ModalBody = () => {
               </label>
             </div>
           </div>
-
           {/* title */}
           <div className="col-span-4 sm:col-span-1">
             <label
