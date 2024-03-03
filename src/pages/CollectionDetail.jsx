@@ -16,26 +16,53 @@ const CollectionDetail = () => {
   const { title, time, img, category, ingredients, method, servings } = recipe;
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="">
-        <h2 className="font-semibold text-xl">{title}</h2>
-        <span className="">{category}</span>
-        <img src={img} alt="" className="w-32 h-32" />
-      </div>
-      <div className="flex gap-4">
-        <div className="border border-gray-400 rounded-lg p-2">Cook Time: {time}</div>
-        <div className="border border-gray-400 rounded-lg p-2">Servings: {servings}</div>
-      </div>
-
-      <div className="flex justify-between gap-6 p-2 border-2 border-gray-800 rounded-lg">
-        <div className="border-r-4 border-dotted border-gray-700 p-2">
-          <h2 className="font-semibold pb-2">Ingredients:</h2>
-          <p>{ingredients}</p>
+    <div className="grid grid-cols-9 p-4">
+      <div className="col-span-5 p-4">
+        <h2 className="mt-10 font-semibold text-6xl text-green-800 tracking-wide">
+          {title}
+        </h2>
+        <p className="mt-2 mx-1 text-gray-400 font-semibold tracking-wider text-lg">
+          {category}
+        </p>
+        <div className="flex justify-between mt-10 mx-2 font-semibold text-gray-800 text-center">
+          <div className="flex flex-col">
+            Servings
+            <p>{servings}</p>
+            <span className="text-xs text-gray-500">person</span>
+          </div>
+          <div className="flex flex-col tracking-wide">
+            Prep Time
+            <p>{time}</p>
+            <span className="text-xs text-gray-500">mins</span>
+          </div>
+          <div className="flex flex-col tracking-wide">
+            Cook Time
+            <p>{time}</p>
+            <span className="text-xs text-gray-500">mins</span>
+          </div>
+          <div className="flex flex-col tracking-wide">
+            Total Time
+            <p>{time}</p>
+            <span className="text-xs text-gray-500">mins</span>
+          </div>
         </div>
-        <div className="p-2">
-          <h2 className="font-semibold pb-2">Method:</h2>
-          <p>{method}</p>
+        <div className="flex flex-col justify-between gap-6 p-2 rounded-lg mt-6">
+          <div className="">
+            <h2 className="font-semibold ">Ingredients</h2>
+            <p>{ingredients}</p>
+          </div>
+          <div className="">
+            <h2 className="font-semibold">Method</h2>
+            <p>{method}</p>
+          </div>
         </div>
+      </div>
+      <div className="col-span-4 p-4 mt-16">
+        <img
+          src={img}
+          alt=""
+          className="sticky right-0 top-0 w-full h-full object-cover"
+        />
       </div>
     </div>
   );

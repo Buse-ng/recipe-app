@@ -5,7 +5,7 @@ import CreateRecipe from "../components/Collection/CreateRecipe";
 const Collection = () => {
   return (
     <div>
-      <div className="mb-6 flex items-center justify-end p-4 sm:ml-64">
+      <div className="mb-6 flex items-center justify-start p-4">
         <CreateRecipe />
       </div> 
       <Cards />
