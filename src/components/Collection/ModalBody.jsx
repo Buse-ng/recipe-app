@@ -4,8 +4,11 @@ import { BiSolidImageAdd } from "react-icons/bi";
 import { CollectionContext } from "../../context/CollectionContext";
 
 const ModalBody = () => {
-  const { id, setId, values, setValues, recipes, setRecipes } =
-    useContext(CollectionContext);
+  const { 
+    id, setId, 
+    values, setValues, 
+    recipes, setRecipes 
+  } = useContext(CollectionContext);
 
   const onChangeInput = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -16,10 +19,9 @@ const ModalBody = () => {
     e.preventDefault();
 
     if (
-      values?.title === "" ||
-      (!values?.title?.trim() && values?.time === "") ||
-      (!values?.time?.trim() && values?.ingredients === "") ||
-      !values?.ingredients?.trim()
+      values?.title === "" || (!values?.title?.trim() && 
+      values?.total_time === "") || (!values?.total_time?.trim() 
+      && values?.ingredients === "") || !values?.ingredients?.trim()
     ) {
       return false;
     }
@@ -40,7 +42,7 @@ const ModalBody = () => {
       servings: e.target.value,
     }));
   };
-  
+
   const handleImageUpload = (file) => {
     if (file) {
       const reader = new FileReader();
@@ -74,8 +76,8 @@ const ModalBody = () => {
       <form className="p-4 md:p-5" id="form" onSubmit={onSubmit}>
         <div className="grid gap-4 mb-4 grid-cols-4">
           {/* input file(img)  */}
-          <div className="col-span-4 sm:col-span-2 sm:row-span-2">
-            <div className="flex items-center justify-center w-full h-full">
+          <div className="col-span-4 sm:col-span-1 sm:row-span-2">
+            <div className="flex items-center justify-center text-center w-full h-full">
               <label
                 htmlFor="img-file"
                 className="flex flex-col items-center justify-center w-full h-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100"
@@ -113,7 +115,7 @@ const ModalBody = () => {
               htmlFor="title"
               className="block mb-2 text-sm font-medium text-gray-900"
             >
-              Recipe Title
+              Recipe Title*
             </label>
             <input
               type="text"
@@ -126,26 +128,6 @@ const ModalBody = () => {
               required=""
             />
           </div>
-
-          {/* cook */}
-          <div className="col-span-4 sm:col-span-1">
-            <label
-              htmlFor="cook"
-              className="block mb-2 text-sm font-medium text-gray-900"
-            >
-              Time
-            </label>
-            <input
-              value={values.time}
-              onChange={onChangeInput}
-              name="time"
-              id="cook"
-              className="bg-gray-300 border border-gray-200 text-gray-900 text-sm rounded-lg block w-full p-2.5 placeholder-gray-400"
-              placeholder="Cook or additional time"
-              required=""
-            />
-          </div>
-
           {/* category */}
           <div className="col-span-4 sm:col-span-1">
             <label
@@ -194,13 +176,69 @@ const ModalBody = () => {
               <option value="10-12">10-12</option>
             </select>
           </div>
+
+          {/* prep time */}
+          <div className="col-span-4 sm:col-span-1">
+            <label
+              htmlFor="prep_time"
+              className="block mb-2 text-sm font-medium text-gray-900"
+            >
+              Prep Time
+            </label>
+            <input
+              value={values.prep_time}
+              onChange={onChangeInput}
+              name="prep_time"
+              id="prep_time"
+              className="bg-gray-300 border border-gray-200 text-gray-900 text-sm rounded-lg block w-full p-2.5 placeholder-gray-400"
+              placeholder="Prep time"
+              required=""
+            />
+          </div>
+          {/* cook time */}
+          <div className="col-span-4 sm:col-span-1">
+            <label
+              htmlFor="cook_time"
+              className="block mb-2 text-sm font-medium text-gray-900"
+            >
+              Cook Time
+            </label>
+            <input
+              value={values.cook_time}
+              onChange={onChangeInput}
+              name="cook_time"
+              id="cook_time"
+              className="bg-gray-300 border border-gray-200 text-gray-900 text-sm rounded-lg block w-full p-2.5 placeholder-gray-400"
+              placeholder="Cook time"
+              required=""
+            />
+          </div>
+          {/* total time */}
+          <div className="col-span-4 sm:col-span-1">
+            <label
+              htmlFor="total_time"
+              className="block mb-2 text-sm font-medium text-gray-900"
+            >
+              Total Time*
+            </label>
+            <input
+              value={values.total_time}
+              onChange={onChangeInput}
+              name="total_time"
+              id="total_time"
+              className="bg-gray-300 border border-gray-200 text-gray-900 text-sm rounded-lg block w-full p-2.5 placeholder-gray-400"
+              placeholder="Total time"
+              required=""
+            />
+          </div>
+
           {/* Ingredients */}
           <div className="col-span-4 sm:col-span-2">
             <label
               htmlFor="ingredients"
               className="block mb-2 text-sm font-medium text-gray-900"
             >
-              Ingredients
+              Ingredients*
             </label>
             <textarea
               id="ingredients"
@@ -243,6 +281,8 @@ const ModalBody = () => {
           <IoAddOutline className="me-1 -ms-1 w-5 h-5" />
           Add new recipe
         </button>
+        <span className="flex items-center justify-end text-xs">
+        Fields marked with * cannot be left blank.</span>
       </form>
     </>
   );
