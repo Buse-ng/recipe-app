@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Collection = () => {
   return (
-    <div>
+    <div className="p-4">
       <div className="mb-6 flex items-center justify-start p-4">
         <CreateRecipe />
       </div> 

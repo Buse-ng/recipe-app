@@ -4,7 +4,7 @@ import MealCards from "../components/Meals/MealCards";
 
 const Recipes = () => {
   return (
-    <div>
+    <div className="p-4">
       <SearchMeal />
       <div>
         <MealCards />

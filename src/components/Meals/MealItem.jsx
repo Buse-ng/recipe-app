@@ -35,7 +35,7 @@ const MealItem = ({ item }) => {
               className={`text-2xl cursor-pointer
                 ${isFavorite 
                 ? "text-red-600" 
-                : "text-gray-400 hover:text-red-500"
+                : "text-gray-400 hover:text-red-600"
                 }`}
             >
               <MdFavorite />

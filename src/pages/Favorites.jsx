@@ -10,8 +10,8 @@ const Favorites = () => {
   }
 
   return (
-    <div className="container mx-auto overflow-hidden">
-      <h2 className="text-2xl font-bold my-4 mx-auto text-purple-950">
+    <div className="container mx-auto overflow-hidden p-4">
+      <h2 className="text-2xl font-bold my-4 mx-auto text-gray-700">
         Favorites
       </h2>
       <div 
