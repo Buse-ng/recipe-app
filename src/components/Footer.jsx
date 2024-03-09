@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/recipeLogo.png";
+import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -18,7 +18,7 @@ const Footer = () => {
                 className="h-16"
                 alt="Logo"
               />
-              <span className="self-center text-xl sm:text-2xl font-semibold whitespace-nowrap text-green-600">
+              <span className="self-center text-xl sm:text-2xl font-semibold whitespace-nowrap text-[#D60324]">
                 Recipe
               </span>
             </Link>

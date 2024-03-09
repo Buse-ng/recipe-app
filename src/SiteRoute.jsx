@@ -6,12 +6,13 @@ import Favorites from "./pages/Favorites";
 import Recipes from "./pages/Recipes";
 import PageNotFound from "./pages/PageNotFound";
 import Home from "./pages/Home";
+import HomeDesign from "./pages/HomeDesign";
 
 const SiteRoute = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomeDesign />} />
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/collection" element={<Collection />} />
         <Route path="/favorites" element={<Favorites />} />

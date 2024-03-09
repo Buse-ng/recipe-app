@@ -12,8 +12,7 @@ const MealItem = ({ item }) => {
       <div className="bg-gray-300 w-52 h-64 rounded-t-3xl rounded-b-lg">
         <div className="relative flex items-center justify-center">
           <img
-            className="absolute -top-10 bg-white rounded-full w-36 h-36 
-            border-4 border-green-600"
+            className="absolute -top-10 bg-white rounded-full w-36 h-36"
             src={item.strMealThumb}
             alt="recipeImg" 
           />
