@@ -28,10 +28,10 @@ const Navbar = () => {
                   className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-300 group"
                 >
                   <span
-                    className="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-600"
+                    className="md:hidden w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-600"
                     aria-hidden="true"
                   >
-                    <HiHome className="w-6 h-6" />
+                    <HiHome className="w-6 h-6 " />
                   </span>
                   <span className="ms-3">Home</span>
                 </Link>
@@ -42,10 +42,10 @@ const Navbar = () => {
                   className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-300 group"
                 >
                   <span
-                    className="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-600"
+                    className="md:hidden w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-600"
                     aria-hidden="true"
                   >
-                    <LuClipboardList className="w-6 h-6" />
+                    <LuClipboardList className="w-6 h-6 " />
                   </span>
                   <span className="ms-3">Recipes</span>
                 </Link>
@@ -56,10 +56,10 @@ const Navbar = () => {
                   className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-300 group"
                 >
                   <span
-                    className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-600"
+                    className="md:hidden flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-600"
                     aria-hidden="true"
                   >
-                    <HiSquaresPlus className="w-6 h-6" />
+                    <HiSquaresPlus className="w-6 h-6 " />
                   </span>
                   <span className="flex-1 ms-3 whitespace-nowrap">
                     Collection
@@ -72,10 +72,10 @@ const Navbar = () => {
                     className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-300 group"
                   >
                     <span
-                      className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-600"
+                      className="md:hidden flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-600"
                       aria-hidden="true"
                     >
-                      <MdFavorite className="w-6 h-6" />
+                      <MdFavorite className="w-6 h-6 " />
                     </span>
                     <span className="flex-1 ms-3 whitespace-nowrap">
                       Favorites

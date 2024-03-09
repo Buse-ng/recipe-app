@@ -5,25 +5,9 @@ import { Link } from "react-router-dom";
 import { GiHotMeal, GiMeal } from "react-icons/gi";
 import { FaArrowRight, FaMapLocationDot } from "react-icons/fa6";
 import { MdArrowForwardIos } from "react-icons/md";
+import a from "../assets/a.jpg";
 
 const HomeDesign = () => {
-  const [randomMeal, setRandomMeal] = useState(null);
-  const { URL } = useContext(MealsContext);
-  const randomMealUrl = `${URL}/random.php`;
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Fetch random meal
-        const randomMealResponse = await axios.get(randomMealUrl);
-        setRandomMeal(randomMealResponse.data.meals[0]);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-  }, []);
-
   return (
     <div
       className="flex items-center justify-start w-full 
@@ -41,7 +25,7 @@ const HomeDesign = () => {
           in the kitchen.
           <span>
             Hundreds of options, easy usage, and unlimited culinary experiences
-            await you
+            await you.
           </span>
         </div>
         <div className="flex justify-between items-center mt-16">
@@ -68,7 +52,7 @@ const HomeDesign = () => {
           </div>
           <div
             className="bg-[#D60324] hover:bg-[#DC0213] text-base 
-          p-2 rounded-xl font-semibold w-36 cursor-pointer animate-pulse"
+            p-2 rounded-xl font-semibold w-36 cursor-pointer animate-pulse"
           >
             <Link to="/recipes" className="">
               <p className="flex items-center justify-center gap-4  text-gray-100">
