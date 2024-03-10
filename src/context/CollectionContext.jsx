@@ -1,11 +1,11 @@
 import { createContext, useState, useEffect } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 export const CollectionContext = createContext();
 
 const CollectionProvider = ({ children }) => {
-  const [id, setId] = useState(0);
   const initialValues = {
-    id: id,
+    id: uuidv4(),
     title: "",
     img: "",
     prep_time: "",
@@ -27,8 +27,6 @@ const CollectionProvider = ({ children }) => {
   return (
     <CollectionContext.Provider
       value={{
-        id,
-        setId,
         initialValues,
         values,
         setValues,

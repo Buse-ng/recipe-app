@@ -5,9 +5,9 @@ import { FaTrashAlt } from "react-icons/fa";
 import showToast from "./ToastMessage";
 
 const Cards = () => {
-  const { id, recipes, setRecipes } = useContext(CollectionContext);
+  const { recipes, setRecipes } = useContext(CollectionContext);
   const [isOpenModal, setIsOpenModal] = useState(false);
-
+ 
   const deleteRecipe = (id) => {
     const newRecipes = recipes.filter((item) => {
       return item.id !== id;

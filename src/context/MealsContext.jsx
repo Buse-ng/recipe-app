@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axios from 'axios';
+import showToast from "../components/Collection/ToastMessage";
 
 export const MealsContext = createContext();
 
@@ -29,10 +30,12 @@ export const MealsProvider = ({ children }) => {
         setFavorites((prevFavorites) =>
           prevFavorites.filter((favorite) => favorite.idMeal !== mealId)
         );
+        showToast(`Removed from favorites` , 'success');
       } else {
         const response = await axios.get(`${URL}/lookup.php?i=${mealId}`);
         const mealDetail = response.data.meals[0];
         setFavorites((prevFavorites) => [...prevFavorites, mealDetail]);
+        showToast(`Added to favorites` , 'success');
       }
     } catch (error) {
       console.error(error);

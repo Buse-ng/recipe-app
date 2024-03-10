@@ -7,7 +7,7 @@ const CollectionDetail = () => {
   const { recipes } = useContext(CollectionContext);
 
   const recipe = recipes.find((item) => {
-    return item.id === id - 1;
+    return item.id === id;
   });
 
   if (!recipe) {

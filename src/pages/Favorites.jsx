@@ -6,7 +6,7 @@ const Favorites = () => {
   const { defaultMeals, favorites } = useContext(MealsContext);
 
   if (defaultMeals === null) {
-    return <p>Empty</p>;
+    return <p className="p-4">Empty</p>;
   }
 
   return (

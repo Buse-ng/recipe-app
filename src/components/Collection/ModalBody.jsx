@@ -6,14 +6,13 @@ import showToast from "./ToastMessage";
 
 const ModalBody = () => {
   const { 
-    id, setId, 
     values, setValues, 
     recipes, setRecipes 
   } = useContext(CollectionContext);
 
   const onChangeInput = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
-    console.log("values ", values);
+    console.log("values ", values); 
   };
 
   const onSubmit = (e) => {
@@ -28,7 +27,6 @@ const ModalBody = () => {
       }
     }
     setRecipes([...recipes, values]);
-    setId(id + 1);
     console.log("values:", values);
     showToast("New recipe added successfully", "success");
   };
@@ -273,7 +271,7 @@ const ModalBody = () => {
               value={values.method}
               onChange={onChangeInput}
               rows={8}
-              className="block p-2.5 w-full text-smbg-gray-300 
+              className="block p-2.5 w-full text-sm bg-gray-300 
               rounded-lg border border-gray-200"
               placeholder="Write recipe method here"
             />

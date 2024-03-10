@@ -5,7 +5,7 @@ import axios from "axios";
 
 const MealCards = () => {
   const { 
-    URL, 
+    URL,
     searchResult, setSearchResult, 
     defaultMeals, setDefaultMeals 
   } = useContext(MealsContext);
@@ -23,12 +23,13 @@ const MealCards = () => {
     fetchData();
   }, []);
 
+
   return (
     <div>
       {searchResult ? (
         <div>
           <h2 className="my-8 text-xl font-semibold mb-2">
-            Search Results:
+            Results:
           </h2>
           <div 
             className="max-w-sm md:max-w-none mx-auto md:mx-0
@@ -44,7 +45,6 @@ const MealCards = () => {
       ) 
       : (
         // default recipes : I choose "starter meals"
-
         <div>
           <h2 className="my-8 text-xl font-semibold mb-2">
             Starter Meals
