@@ -18,14 +18,13 @@ const CreateRecipe = () => {
       {/* create new recipe button */}
       <div
         className={`flex items-center gap-x-2 p-2 bg-green-500 rounded-md 
-        font-semibold text-gray-900 hover:bg-green-600 text-center
-        focus:ring-4 focus:outline-none focus:ring-green-300 cursor-pointer`}
+        font-semibold text-gray-900 hover:bg-green-600 text-center cursor-pointer`}
         onClick={handleCreateBtn}
       >
         <span className="text-2xl">
           <IoAddCircleOutline />
         </span>
-        Create new recipe
+        Create
       </div>
 
       {/* MODAL  */}

@@ -57,7 +57,7 @@ const Cards = () => {
             </div>
 
             <div
-              className="flex justify-between items-center 
+              className="flex justify-between items-center gap-x-2
               text-sm md:text-base"
             >
               <Link
