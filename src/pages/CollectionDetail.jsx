@@ -77,11 +77,13 @@ const CollectionDetail = () => {
 
         <div className="flex flex-col justify-between gap-6 md:p-2 rounded-lg mt-6">
           <div className="">
-            <h2 className="font-semibold ">Ingredients</h2>
-            <p>{ingredients}</p>
+            <h2 className="font-semibold md:my-2">Ingredients</h2>
+            {ingredients && ingredients.split('\n').map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+            ))}
           </div>
-          <div className="">
-            <h2 className="font-semibold">Method</h2>
+          <div>
+            <h2 className="md:my-2 font-semibold">Method</h2>
             <p>{method}</p>
           </div>
         </div>
