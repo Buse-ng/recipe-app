@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { CollectionContext } from "../context/CollectionContext";
 import { useParams } from "react-router-dom";
+import PageNotFound from "./PageNotFound";
 
 const CollectionDetail = () => {
   let { id } = useParams();
@@ -11,7 +12,7 @@ const CollectionDetail = () => {
   });
 
   if (!recipe) {
-    return <section>Loading...</section>;
+    return <><PageNotFound /></>;
   }
   const {
     title,
@@ -76,7 +77,7 @@ const CollectionDetail = () => {
         </div>
 
         <div className="flex flex-col justify-between gap-6 md:p-2 rounded-lg mt-6">
-          <div className="">
+          <div>
             <h2 className="font-semibold md:my-2">Ingredients</h2>
             {ingredients && ingredients.split('\n').map((ingredient, index) => (
             <li key={index}>{ingredient}</li>

@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { useContext } from "react";
 import { FaSearch } from "react-icons/fa";
-import { MealsContext } from "../context/MealsContext";
+import { RecipesContext } from "../context/RecipesContext";
 
 const SearchMeal = () => {
   const { 
     URL, setSearchResult,
     search, setSearch 
-  } = useContext(MealsContext);
+  } = useContext(RecipesContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

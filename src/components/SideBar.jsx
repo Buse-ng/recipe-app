@@ -4,7 +4,7 @@ import { HiHome, HiSquaresPlus } from "react-icons/hi2";
 import { LuClipboardList, LuMenu } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import "./module.css";
-import { MealsContext } from "../context/MealsContext";
+import { RecipesContext } from "../context/RecipesContext";
 
 const SideBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +13,7 @@ const SideBar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const { favorites } = useContext(MealsContext);
+  const { favorites } = useContext(RecipesContext);
 
   return (
     <div>

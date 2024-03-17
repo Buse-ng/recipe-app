@@ -7,6 +7,7 @@ import Recipes from "./pages/Recipes";
 import PageNotFound from "./pages/PageNotFound";
 import Home from "./pages/Home";
 import HomeDesign from "./pages/HomeDesign";
+import RecipesDetail from "./pages/RecipesDetail";
 
 const SiteRoute = () => {
   return (
@@ -16,7 +17,8 @@ const SiteRoute = () => {
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/collection" element={<Collection />} />
         <Route path="/favorites" element={<Favorites />} />
-        <Route path="/recipes/:id" element={<CollectionDetail />} />
+        <Route path="/collection/:id" element={<CollectionDetail />} />
+        <Route path="/recipes/:id" element={<RecipesDetail />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>

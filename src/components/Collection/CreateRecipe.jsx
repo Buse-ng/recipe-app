@@ -21,7 +21,7 @@ const CreateRecipe = () => {
         font-semibold text-gray-900 hover:bg-green-600 text-center cursor-pointer`}
         onClick={handleCreateBtn}
       >
-        <span className="text-2xl">
+        <span className="text-xl md:text-2xl">
           <IoAddCircleOutline />
         </span>
         Create

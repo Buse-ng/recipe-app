@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import { MdClose, MdFavorite } from "react-icons/md";
 import { HiHome, HiSquaresPlus } from "react-icons/hi2";
 import { LuClipboardList } from "react-icons/lu";
-import { MealsContext } from "../context/MealsContext";
+import { RecipesContext } from "../context/RecipesContext";
 import { Link } from "react-router-dom";
 
 const NavItems = ({ menuHandle }) => {
-  const { favorites } = useContext(MealsContext);
+  const { favorites } = useContext(RecipesContext);
 
   return (
     <div className="h-full px-3 py-4 md:p-0 overflow-y-auto bg-gray-200 md:bg-transparent">

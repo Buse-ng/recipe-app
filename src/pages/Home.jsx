@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { MealsContext } from "../context/MealsContext";
+import { RecipesContext } from "../context/RecipesContext";
 
 const Home = () => {
   const [area, setArea] = useState(null);
   const [randomMeal, setRandomMeal] = useState(null);
   const [categories, setCategories] = useState(null);
 
-  const { URL } = useContext(MealsContext);
+  const { URL } = useContext(RecipesContext);
   const areaUrl = `${URL}/list.php?a=list`;
   const randomMealUrl = `${URL}/random.php`;
   const categoriesUrl = `${URL}/categories.php`;

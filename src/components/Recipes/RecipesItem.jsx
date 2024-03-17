@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { MdFavorite } from "react-icons/md";
-import { MealsContext } from "../../context/MealsContext";
+import { RecipesContext } from "../../context/RecipesContext";
 
-const MealItem = ({ item }) => {
-  const { toggleFavorites, favorites } = useContext(MealsContext);
+const RecipesItem = ({ item }) => {
+  const { toggleFavorites, favorites } = useContext(RecipesContext);
   const isFavorite = favorites.some((favorite) => favorite.idMeal === item.idMeal);
 
   return (
@@ -17,18 +17,25 @@ const MealItem = ({ item }) => {
             alt="recipeImg" 
           />
         </div>
+
         <div className="p-5 mt-28 overflow-y-visible">
           <div className="flex flex-col items-center justify-center mb-3">
-            <Link to={``}>
-              <h2 className="font-bold tracking-tight text-gray-900">
+            <Link to={`/recipes/${item.idMeal}`}>
+              <h2 className="font-bold tracking-tight text-gray-900 truncate max-w-44">
                 {item.strMeal}
+                {/* {item.strMeal.length > 15 
+                ? `${item.strMeal.substring(0, 15)}...` 
+                : item.strMeal} 
+                */}
               </h2>
             </Link>
             <p className="text-gray-400">
               {item.strCategory ? item.strCategory : "Starter"}
             </p>
           </div>
+          
           <div className="bg-gray-200 w-40 py-[1px]"></div>
+
           <div className="flex items-center justify-between mt-2">
             <button 
               onClick={() => toggleFavorites(item.idMeal)}
@@ -41,7 +48,7 @@ const MealItem = ({ item }) => {
               <MdFavorite />
             </button>
             <Link
-              to={``}
+              to={`/recipes/${item.idMeal}`}
               className="inline-flex items-center text-center
               text-sm font-medium text-white bg-green-700 
               rounded-lg hover:bg-green-800 px-3 py-2"
@@ -55,4 +62,4 @@ const MealItem = ({ item }) => {
   );
 };
 
-export default MealItem;
+export default RecipesItem;

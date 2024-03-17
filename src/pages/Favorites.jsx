@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import { MealsContext } from "../context/MealsContext";
-import MealItem from "../components/Meals/MealItem";
+import { RecipesContext } from "../context/RecipesContext";
+import RecipesItem from "../components/Recipes/RecipesItem";
 
 const Favorites = () => {
-  const { defaultMeals, favorites } = useContext(MealsContext);
+  const { defaultMeals, favorites } = useContext(RecipesContext);
 
   if (defaultMeals === null) {
-    return <p className="p-4">Empty</p>;
+    return <p className="p-4 text-gray-400">Empty</p>;
   }
 
   return (
@@ -20,7 +20,7 @@ const Favorites = () => {
       >
         {favorites.map((item) => (
           <div key={item.idMeal}>
-            <MealItem item={item} />
+            <RecipesItem item={item} />
           </div>
         ))}
       </div>

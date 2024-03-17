@@ -32,7 +32,7 @@ const Cards = () => {
           bg-gray-200 border-gray-100 my-auto"
         >
           <div className="relative">
-            <Link to={`/recipes/${item.id}`}>
+            <Link to={`/collection/${item.id}`}>
               <img
                 className="rounded-t-lg object-cover w-full h-44"
                 src={item.img}
@@ -42,7 +42,7 @@ const Cards = () => {
           </div>
 
           <div className="p-3 text-gray-900">
-            <Link to={`/recipes/${item.id}`}>
+            <Link to={`/collection/${item.id}`}>
               <h5
                 className="text-lg mb-2 md:text-2xl font-bold 
               tracking-tight truncate"
@@ -61,7 +61,7 @@ const Cards = () => {
               text-sm md:text-base"
             >
               <Link
-                to={`/recipes/${item.id}`}
+                to={`/collection/${item.id}`}
                 className="inline-flex items-center px-3 py-2 
                 font-medium text-center text-white 
                 rounded-lg bg-green-700 hover:bg-green-800"

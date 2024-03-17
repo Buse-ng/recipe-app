@@ -1,10 +1,10 @@
+import axios from 'axios'; 
 import { createContext, useEffect, useState } from "react";
-import axios from 'axios';
 import showToast from "../components/Collection/ToastMessage";
 
-export const MealsContext = createContext();
+export const RecipesContext = createContext();
 
-export const MealsProvider = ({ children }) => {
+export const RecipesProvider = ({ children }) => {
   const URL = "https://www.themealdb.com/api/json/v1/1";
 
   const [search, setSearch] = useState("");
@@ -52,7 +52,7 @@ export const MealsProvider = ({ children }) => {
   }, [favorites])
   
   return (
-    <MealsContext.Provider
+    <RecipesContext.Provider
       value={{
         URL,
         search, setSearch,
@@ -63,6 +63,6 @@ export const MealsProvider = ({ children }) => {
       }}
     >
       {children}
-    </MealsContext.Provider>
+    </RecipesContext.Provider>
   );
 };

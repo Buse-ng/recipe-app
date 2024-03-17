@@ -1,13 +1,13 @@
 import React from "react";
 import SearchMeal from "../components/SearchMeal";
-import MealCards from "../components/Meals/MealCards";
+import RecipesCards from "../components/Recipes/RecipesCards";
 
 const Recipes = () => {
   return (
     <div className="p-4">
       <SearchMeal />
       <div>
-        <MealCards />
+        <RecipesCards />
       </div>
     </div>
   );

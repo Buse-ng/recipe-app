@@ -4,16 +4,16 @@ import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import CollectionProvider from "./context/CollectionContext";
-import { MealsProvider } from "./context/MealsContext.jsx";
+import { RecipesProvider } from "./context/RecipesContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-      <MealsProvider>
+      <RecipesProvider>
         <CollectionProvider>
           <App />
         </CollectionProvider>
-      </MealsProvider>
+      </RecipesProvider>
     </Router>
   </React.StrictMode>
 );

@@ -1,14 +1,14 @@
 import React, { useContext, useEffect } from "react";
-import MealItem from "./MealItem";
-import { MealsContext } from "../../context/MealsContext";
+import RecipesItem from "./RecipesItem";
+import { RecipesContext } from "../../context/RecipesContext";
 import axios from "axios";
 
-const MealCards = () => {
+const RecipesCards = () => {
   const { 
     URL,
     searchResult, setSearchResult, 
     defaultMeals, setDefaultMeals 
-  } = useContext(MealsContext);
+  } = useContext(RecipesContext);
   
   useEffect(() => {
     const fetchData = async () => {
@@ -23,7 +23,6 @@ const MealCards = () => {
     fetchData();
   }, []);
 
-
   return (
     <div>
       {searchResult ? (
@@ -37,7 +36,7 @@ const MealCards = () => {
           >
             {searchResult && searchResult.map((item) => (
               <div key={item.idMeal}>
-                <MealItem item={item} />
+                <RecipesItem item={item} />
               </div>
             ))}
           </div>
@@ -55,7 +54,7 @@ const MealCards = () => {
           >
             {defaultMeals && defaultMeals.map((item) => (
               <div key={item.idMeal}>
-                <MealItem item={item} />
+                <RecipesItem item={item} />
               </div>
             ))}
           </div>
@@ -66,4 +65,4 @@ const MealCards = () => {
   );
 };
 
-export default MealCards;
+export default RecipesCards;
