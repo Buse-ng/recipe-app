@@ -1,4 +1,4 @@
-# React + Vite
+# Recipe App
 
 This application is a recipe application. It includes home, recipes, collection, details, and favorites pages. 
 It contains more than 300 recipes from 28 countries and 14 categories. 
